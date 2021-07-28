@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="SameFinallProject">
+  <ClassDiagramComponents>
+    <Class name="Cell" package="samefinallproject" visibility="public" xPosition="49.0" yPosition="87.0">
+      <Fields>
+        <Field name="teacher" type="Teacher" visibility="private"/>
+        <Field name="CourseName" type="String" visibility="private"/>
+        <Field name="room" type="Room" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="package">
+          <Argument type="String" name="teacherId"/>
+          <Argument type="String" name="roomName"/>
+          <Argument type="String" name="courseName"/>
+        </Constructor>
+        <Constructor visibility="package">
+          <Argument type="Teacher" name="teacher"/>
+          <Argument type="String" name="CourseName"/>
+          <Argument type="Room" name="room"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getTeacher" returnType="Teacher" visibility="public"/>
+        <Method name="setTeacherId" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="getCourseName" returnType="String" visibility="public"/>
+        <Method name="setCourseName" returnType="void" visibility="public">
+          <Argument type="String" name="CourseName"/>
+        </Method>
+        <Method name="getRoom" returnType="Room" visibility="public"/>
+        <Method name="setRoomName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getTeacherId" returnType="String" visibility="public"/>
+        <Method name="getRoomname" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Course" package="samefinallproject" visibility="public" xPosition="320.0" yPosition="305.0">
+      <Fields>
+        <Field name="ID" type="int" visibility="private"/>
+        <Field name="Name" type="String" visibility="private"/>
+        <Field name="teachers" type="Teacher[]" visibility="private"/>
+        <Field name="labs" type="Lab[]" visibility="private"/>
+        <Field name="lectures" type="Lecture[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="ID"/>
+          <Argument type="String" name="Name"/>
+          <Argument type="int" name="NoOfLabs"/>
+          <Argument type="int" name="NoOfLectures"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getID" returnType="int" visibility="public"/>
+        <Method name="setID" returnType="void" visibility="public">
+          <Argument type="int" name="ID"/>
+        </Method>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="Name"/>
+        </Method>
+        <Method name="getTeachers" returnType="Teacher[]" visibility="public"/>
+        <Method name="setTeachers" returnType="void" visibility="public">
+          <Argument type="Teacher[]" name="teachers"/>
+        </Method>
+        <Method name="getLabs" returnType="Lab[]" visibility="public"/>
+        <Method name="setLabs" returnType="void" visibility="public">
+          <Argument type="Lab[]" name="labs"/>
+        </Method>
+        <Method name="getLectures" returnType="Lecture[]" visibility="public"/>
+        <Method name="setLectures" returnType="void" visibility="public">
+          <Argument type="Lecture[]" name="lectures"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Room" package="samefinallproject" visibility="public" isAbstract="true" xPosition="745.0" yPosition="20.0">
+      <Fields>
+        <Field name="name" type="String" visibility="package"/>
+        <Field name="istaken" type="Boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package"/>
+        <Constructor visibility="package">
+          <Argument type="String" name="name"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Laboratoty" package="samefinallproject" visibility="public" xPosition="975.0" yPosition="248.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="package">
+          <Argument type="String" name="name"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Classroom" package="samefinallproject" visibility="public" xPosition="543.0" yPosition="165.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="package">
+          <Argument type="String" name="name"/>
+        </Constructor>
+        <Constructor visibility="package"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Teacher" package="samefinallproject" visibility="public" xPosition="39.0" yPosition="305.0">
+      <Fields>
+        <Field name="ID" type="String" visibility="private"/>
+        <Field name="Phone" type="String" visibility="private"/>
+        <Field name="Email" type="String" visibility="private"/>
+        <Field name="istaken" type="Boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getID" returnType="String" visibility="public"/>
+        <Method name="setID" returnType="void" visibility="public">
+          <Argument type="String" name="ID"/>
+        </Method>
+        <Method name="getPhone" returnType="String" visibility="public"/>
+        <Method name="setPhone" returnType="void" visibility="public">
+          <Argument type="String" name="Phone"/>
+        </Method>
+        <Method name="getEmail" returnType="String" visibility="public"/>
+        <Method name="setEmail" returnType="void" visibility="public">
+          <Argument type="String" name="Email"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TimeTable" package="samefinallproject" visibility="public" xPosition="320.0" yPosition="820.0">
+      <Fields>
+        <Field name="cell" type="ArrayList&lt;Cell&gt;" visibility="package" isStatic="true"/>
+        <Field name="DaysPerWeek" type="int" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="HoursPerDay" type="int" visibility="package" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="input" returnType="void" visibility="public"/>
+        <Method name="addCell" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Cell" name="c"/>
+        </Method>
+        <Method name="getCell" returnType="ArrayList&lt;Cell&gt;" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="Tutorial" package="samefinallproject" visibility="public" isAbstract="true" xPosition="851.0" yPosition="669.0">
+      <Fields>
+        <Field name="teacher" type="Teacher" visibility="private"/>
+        <Field name="Num_Of_Hours" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getTeacher" returnType="Teacher" visibility="public"/>
+        <Method name="setTeacher" returnType="void" visibility="public">
+          <Argument type="Teacher" name="teacher"/>
+        </Method>
+        <Method name="getNum_Of_Hours" returnType="int" visibility="public"/>
+        <Method name="setNum_Of_Hours" returnType="void" visibility="public">
+          <Argument type="int" name="Num_Of_Hours"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Lab" package="samefinallproject" visibility="public" xPosition="1003.0" yPosition="414.0">
+      <Fields>
+        <Field name="laboratory" type="Laboratoty" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package">
+          <Argument type="Teacher" name="teacher"/>
+          <Argument type="int" name="Num_Of_Hours"/>
+          <Argument type="Laboratoty" name="laboratory"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Lecture" package="samefinallproject" visibility="public" xPosition="745.0" yPosition="430.0">
+      <Fields>
+        <Field name="classroom" type="Classroom" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package">
+          <Argument type="Teacher" name="teacher"/>
+          <Argument type="int" name="Num_Of_Hours"/>
+          <Argument type="Classroom" name="classroom"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="samefinallproject.Classroom" target="samefinallproject.Room"/>
+    <UseRelation source="samefinallproject.Cell" target="samefinallproject.Teacher" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="teacher" source="samefinallproject.Cell" target="samefinallproject.Teacher" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="samefinallproject.Lecture" target="samefinallproject.Tutorial"/>
+    <HasRelation name="classroom" source="samefinallproject.Lecture" target="samefinallproject.Classroom" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="laboratory" source="samefinallproject.Lab" target="samefinallproject.Laboratoty" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="samefinallproject.Course" target="samefinallproject.Teacher" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="samefinallproject.Cell" target="samefinallproject.Room" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="samefinallproject.Tutorial" target="samefinallproject.Teacher" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="samefinallproject.TimeTable" target="samefinallproject.Cell" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="teacher" source="samefinallproject.Tutorial" target="samefinallproject.Teacher" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="samefinallproject.Lab" target="samefinallproject.Tutorial"/>
+    <UseRelation source="samefinallproject.Course" target="samefinallproject.Lecture" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="room" source="samefinallproject.Cell" target="samefinallproject.Room" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="samefinallproject.Laboratoty" target="samefinallproject.Room"/>
+    <UseRelation source="samefinallproject.Course" target="samefinallproject.Lab" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cell" source="samefinallproject.TimeTable" target="samefinallproject.Cell" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Cell&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
